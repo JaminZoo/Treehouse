@@ -1,7 +1,7 @@
 import random
 
 
-class Combat(self):
+class Combat:
 # define attributes common for attack and dodge
 	max_attack = 6
 	max_dodge = 6

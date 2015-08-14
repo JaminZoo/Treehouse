@@ -25,7 +25,7 @@ class Character(Combat):
 # define select weapon method
 
 	def getWeapon(self):
-		weapon_choice = input('Choose your weapon: [S]word, [A]xe or [C]lub').lower()
+		weapon_choice = input('Choose your weapon: A [S]word, an [A]xe or a [C]lub? ').lower()
 		
 		if weapon_choice in 'sac':
 			if weapon_choice == 's':
@@ -51,8 +51,8 @@ class Character(Combat):
 		return '{}, HP: {}, EXP: {}'.format(self.name, self.hit_points, self.experience)
 	
 	def rest(self):
-		if self.hit_points < self.base_hit_points
+		if self.hit_points < self.base_hit_points:  # ensure character can't amase more than base_hit_points
 			self.hit_points += 1 # if player decides to rest for their turn, add one additional hit point to base score
 			
 	def levelUp(self):
-		return self.expeience >= 5 # when character reaches exp of 5 or more
+		return self.experience >= 5 # when character reaches exp of 5 or more

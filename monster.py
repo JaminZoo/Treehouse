@@ -5,9 +5,9 @@ from combat import Combat # enable monster class to use attack and defend behavi
 COLORS = ['red', 'blue', 'green', 'gold']
 
 
-class Monster(Combat):
+class Monster(Combat):  # monster class inherits from Combat the attack and dodge attributes
 
-#attributes common to all monsters, min and max hit points are related to attack
+# attributes common to all monsters, min and max hit points are related to attack
 	
 	min_hit_points = 1
 	max_hit_points = 1 
