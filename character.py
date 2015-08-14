@@ -24,7 +24,7 @@ class Character(Combat):
 	
 # define select weapon method
 
-	def getWeapon(self):
+	def get_weapon(self):
 		weapon_choice = input('Choose your weapon: A [S]word, an [A]xe or a [C]lub? ').lower()
 		
 		if weapon_choice in 'sac':
@@ -35,13 +35,13 @@ class Character(Combat):
 			else:
 				return {'type':'club', 'damage':1}
 		else:
-			return self.getWeapon() # call getWeapon method if user inputs nothing or different selection
+			return self.get_weapon() # call getWeapon method if user inputs nothing or different selection
 	
 	
 	def __init__(self, **kwargs):
 		# user sees this every time the class is initialised i.e. at the start of the 'game'
 		self.name = input('What is your name oh brave soul? ')
-		self.weapon = self.getWeapon()
+		self.weapon = self.get_weapon()
 		self.hit_points = self.base_hit_points
 		
 		for key, value in kwargs.items():
@@ -54,5 +54,5 @@ class Character(Combat):
 		if self.hit_points < self.base_hit_points:  # ensure character can't amase more than base_hit_points
 			self.hit_points += 1 # if player decides to rest for their turn, add one additional hit point to base score
 			
-	def levelUp(self):
+	def level_up(self):
 		return self.experience >= 5 # when character reaches exp of 5 or more
